@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import Chatbot from "@/components/Chatbot";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://ecovest.app"),
+  metadataBase: new URL("https://ecovestt.vercel.app"),
   title: "EcoVest · Smart Finance. Sustainable Future.",
   description:
     "Building a smarter generation of financially intelligent investors. Learn finance, build wealth, invest in tomorrow's earth.",
