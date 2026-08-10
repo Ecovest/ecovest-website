@@ -6,7 +6,7 @@ import CrossLink from "@/components/CrossLink";
 export const metadata: Metadata = {
   title: "Careers · EcoVest",
   description:
-    "Help build a smarter, more sustainable generation of investors. EcoVest is hiring builders, educators, and community leads.",
+    "Help young Africans go from financial literacy to confident investing. EcoVest is hiring builders, educators, and community leads.",
 };
 
 const roles: {

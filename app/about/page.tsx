@@ -5,7 +5,7 @@ import CrossLink from "@/components/CrossLink";
 export const metadata: Metadata = {
   title: "About · EcoVest",
   description:
-    "EcoVest is a community-driven platform building a smarter, more sustainable generation of investors.",
+    "EcoVest is an AI-powered financial growth ecosystem helping young Africans learn, earn, invest, and build long-term wealth.",
 };
 
 export default function AboutPage() {
@@ -22,37 +22,38 @@ export default function AboutPage() {
             , because they&rsquo;ll already know.
           </>
         }
-        subtitle="EcoVest is a community-first platform turning financial literacy and sustainable investing into something young people actually want to do."
+        subtitle="EcoVest is an AI-powered financial growth ecosystem that combines education, personal guidance, community, and investing. Beginning in Nigeria, built for Africa."
       />
 
       <section className="max-w-5xl mx-auto px-6 md:px-10 py-16 md:py-20 grid lg:grid-cols-12 gap-10">
         <div className="lg:col-span-7 space-y-6 text-ink/70 leading-relaxed text-[17px]">
           <p>
-            EcoVest started with a simple observation: most people leave school
-            without ever being taught how money actually works, and the ones
-            who go looking for answers find a wall of jargon, 400-page books,
-            or trading apps designed to make them lose more often than they
-            win.
+            EcoVest started with a simple observation. Most young Africans
+            leave school without ever being taught how money works. The ones
+            who go looking find a wall of jargon, or investment apps that
+            assume they already understand finance.
           </p>
           <p>
-            We thought there was a better way. A community-driven platform
-            where young people could learn personal finance and investing in
-            short, sharp lessons, and where the entire framework was built
-            around sustainability, because the wealth we help people build
-            should still mean something in 30 years.
+            So the gap isn't knowledge, and it isn't access. It's the bridge
+            between the two. Educational platforms rarely show you a path to
+            taking action. Investment platforms rarely teach. EcoVest is built
+            to be both: structured courses, an AI coach that answers questions
+            in plain language, a community for accountability, and a simulator
+            to practise in before any real money moves.
           </p>
           <p>
-            Today, EcoVest is a community-based learning platform, with
-            structured education, AI-powered tools, and a full ecosystem
-            shipping in phases. Built openly. Built with students. Built for
-            the long game.
+            We're shipping in phases. Community, Academy, AI chat, and the
+            budget tracker first. Then the simulator, news, and goals. Then
+            regulated investing through licensed partners. Then Trade, Quant,
+            Skills, and Capital. Built openly, with students, for the long
+            game.
           </p>
         </div>
 
         <aside className="lg:col-span-5 space-y-4">
-          <Card label="Founded" value="2025 · Lagos / Global" />
+          <Card label="Founded" value="2025 · Lagos, Nigeria" />
           <Card label="Team" value="Students, builders, and educators" />
-          <Card label="Stage" value="Community · Live · Cohort 01" />
+          <Card label="Stage" value="Phase 1 · Cohort 01" />
           <Card label="Funded by" value="Founders & early believers" />
         </aside>
       </section>
@@ -75,8 +76,8 @@ export default function AboutPage() {
             />
             <Value
               n="02"
-              title="Sustainability isn&rsquo;t a side dish"
-              body="Every lesson, every tool, every product decision is filtered through long-term, climate-aligned thinking."
+              title="Learning must lead to action"
+              body="Every lesson connects to something you can actually do, a goal set, a budget built, a simulated trade placed."
             />
             <Value
               n="03"

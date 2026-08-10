@@ -34,8 +34,8 @@ export default function CTA() {
                 Join Cohort 01
               </div>
               <h2 className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tightest">
-                Start investing in <br />
-                <span className="italic font-medium text-brand-200">tomorrow&rsquo;s earth.</span>
+                Go from learning <br />
+                <span className="italic font-medium text-brand-200">to investing.</span>
               </h2>
               <p className="mt-5 text-bone/65 text-lg max-w-lg leading-relaxed">
                 Drop your email. We&rsquo;ll send a short welcome, your first lesson, and early access when EcoVest opens.

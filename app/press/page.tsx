@@ -35,11 +35,11 @@ export default function PressPage() {
           </div>
           <div className="md:col-span-7 space-y-4 text-ink/70 leading-relaxed">
             <p>
-              EcoVest is a community-driven platform teaching young people
-              financial literacy and sustainable investing. Founded in 2025,
-              we&rsquo;re building a four-stage product (community, education,
-              AI tools, and a full ecosystem) with a single goal: a smarter,
-              more sustainable generation of investors.
+              EcoVest is an AI-powered financial growth ecosystem that helps
+              young Africans learn, earn, invest, and build long-term wealth.
+              Founded in 2025 and headquartered in Lagos, we&rsquo;re shipping
+              in five phases, from community and academy through to regulated
+              investing, trading, quant, and capital.
             </p>
             <p>
               For interview requests, exclusives, or fact-checking, reach out
@@ -63,7 +63,7 @@ export default function PressPage() {
             <Fact label="Founded" value="2025" />
             <Fact label="HQ" value="Lagos, Nigeria" />
             <Fact label="Team" value="Distributed" />
-            <Fact label="Stage" value="Community · Cohort 01" />
+            <Fact label="Stage" value="Phase 1 · Cohort 01" />
           </div>
         </div>
 
@@ -99,12 +99,13 @@ export default function PressPage() {
         <div className="rounded-3xl border border-ink/8 p-8 md:p-10 bg-bone-warm">
           <div className="font-display text-2xl text-ink">Boilerplate</div>
           <p className="mt-3 text-ink/70 leading-relaxed">
-            EcoVest is a community-driven finance and sustainability platform
-            that teaches young people how to build wealth without burning the
-            planet. Through bite-size lessons, a peer community, and a
-            sustainability-first approach to investing, EcoVest is building a
-            smarter generation of financially intelligent investors. Founded
-            in 2025.
+            EcoVest is an AI-powered financial growth ecosystem that empowers
+            individuals to learn, earn, invest, and build long-term wealth
+            through education, technology, and community. It combines
+            financial education, an AI financial coach, community learning,
+            planning tools, and investing in one platform. Beginning in
+            Nigeria, EcoVest aims to become Africa&rsquo;s leading financial
+            growth ecosystem. Founded in 2025.
           </p>
         </div>
       </section>

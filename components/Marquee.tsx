@@ -1,12 +1,12 @@
 const tokens = [
   "Financial Literacy",
-  "Sustainable Investing",
-  "Compounding",
-  "Eco-Conscious Wealth",
-  "Future-Ready",
-  "Smart Habits",
-  "Index Funds",
-  "Green Bonds",
+  "AI Financial Coach",
+  "Investing",
+  "Trading",
+  "Community Learning",
+  "Budgeting & Goals",
+  "Quantitative Finance",
+  "Digital Skills",
 ];
 
 export default function Marquee() {

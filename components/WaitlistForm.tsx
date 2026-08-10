@@ -54,8 +54,8 @@ export default function WaitlistForm({
           {state === "submitting"
             ? "Joining…"
             : compact
-            ? "Join"
-            : "Join the waitlist"}
+              ? "Join"
+              : "Join the waitlist"}
         </button>
       </div>
       {state !== "idle" && (
@@ -64,15 +64,15 @@ export default function WaitlistForm({
             state === "success"
               ? "text-brand-600"
               : state === "error"
-              ? "text-red-600"
-              : "text-ink/60"
+                ? "text-red-600"
+                : "text-ink/60"
           }`}
         >
           {message}
         </p>
       )}
       <p className="mt-3 text-xs text-ink/45">
-        No spam. Early-access drops, lessons, and investing breakdowns only.
+        Early-access drops, lessons, and investing breakdowns only.
       </p>
     </form>
   );

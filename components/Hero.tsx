@@ -33,7 +33,7 @@ export default function Hero() {
 
       <div className="relative max-w-7xl mx-auto px-6 md:px-10 grid lg:grid-cols-12 gap-10 items-center">
         <div className="lg:col-span-6 z-10">
-          <motion.div
+          {/* <motion.div
             initial="hidden"
             animate="show"
             custom={0}
@@ -41,7 +41,7 @@ export default function Hero() {
             className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-ink/10 text-xs text-ink/70 mb-7"
           >
             Now accepting early access
-          </motion.div>
+          </motion.div> */}
 
           <motion.h1
             initial="hidden"
@@ -50,10 +50,12 @@ export default function Hero() {
             variants={fadeUp}
             className="font-display text-[44px] sm:text-6xl lg:text-7xl leading-[1.02] tracking-tightest text-ink"
           >
-            Invest in your{" "}
-            <span className="italic font-medium text-brand-600">future</span>.
+            Building{" "}
+            <span className="italic font-medium text-brand-600">
+              financial
+            </span>
             <br />
-            And the planet&rsquo;s.
+            intelligence.
           </motion.h1>
 
           <motion.p
@@ -63,9 +65,9 @@ export default function Hero() {
             variants={fadeUp}
             className="mt-6 text-lg text-ink/65 max-w-xl leading-relaxed"
           >
-            EcoVest is building a smarter generation of financially intelligent
-            investors. Simple finance education, sustainable investing, and a
-            community that takes wealth-building seriously.
+            EcoVest is an AI-powered financial growth ecosystem that helps you
+            learn, earn, invest, and build long-term wealth, through education,
+            technology, and community. Starting in Nigeria, built for Africa.
           </motion.p>
 
           <motion.div
@@ -85,9 +87,12 @@ export default function Hero() {
             variants={fadeUp}
             className="mt-10 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8 text-sm text-ink/55"
           >
-            <Stat value="2.4K+" label="On the waitlist" />
+            {/* <Stat value="2.4K+" label="On the waitlist" /> */}
             <Divider />
-            <Stat value="4 pillars" label="Finance · Invest · Sustain · Mind" />
+            <Stat
+              value="4 pillars"
+              label="Education · AI · Community · Investing"
+            />
           </motion.div>
         </div>
 
@@ -96,12 +101,12 @@ export default function Hero() {
           {/* tiny labels around the scene */}
           <FloatingTag
             className="top-8 right-4"
-            text="Compounding · 7.4% YoY"
+            text="AI Financial Coach"
             dot
           />
           <FloatingTag
             className="bottom-10 left-2"
-            text="Sustainable index"
+            text="Learn · Invest · Grow"
             dot
           />
         </div>

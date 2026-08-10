@@ -20,7 +20,7 @@ export default function PrivacyPage() {
         <h2>1. Who we are</h2>
         <p>
           EcoVest (&ldquo;we&rdquo;, &ldquo;us&rdquo;) is a community-driven
-          finance and sustainability platform. This policy describes how we
+          financial education and investing platform. This policy describes how we
           handle your personal data when you visit our website or use our
           services.
         </p>

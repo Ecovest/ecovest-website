@@ -8,8 +8,8 @@ export default function Footer() {
         <div className="md:col-span-5">
           <Logo />
           <p className="mt-5 text-sm text-ink/55 max-w-sm leading-relaxed">
-            EcoVest. Building a smarter generation of financially intelligent investors.
-            Smart Finance · Sustainable Future · Stronger Youth.
+            EcoVest Technologies Ltd. An AI-powered financial growth ecosystem
+            for young Africans. Learn · Earn · Invest · Grow.
           </p>
         </div>
 

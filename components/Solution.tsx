@@ -2,23 +2,32 @@
 
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import { useEffect, useState } from "react";
+import {
+  Check,
+  GraduationCap,
+  ChartLineUp,
+  Robot,
+  CaretRight,
+  BookOpenText,
+  TrendUp,
+} from "@phosphor-icons/react/dist/ssr";
 
 const pillars = [
   {
-    label: "Finance Basics",
-    body: "Money mechanics, budgeting, credit, and taxes, taught in 5-minute lessons you actually finish.",
+    label: "Financial Education",
+    body: "Structured, beginner-to-advanced courses across personal finance, investing, trading, and quantitative finance.",
+  },
+  {
+    label: "AI Financial Assistant",
+    body: "An intelligent coach that answers your finance questions, explains concepts simply, and guides your next step.",
+  },
+  {
+    label: "Community Learning",
+    body: "Join discussions, ask questions, learn from experts, and stay accountable alongside people on the same path.",
   },
   {
     label: "Investing",
-    body: "Index funds, dollar-cost averaging, risk, and diversification. The moves that compound for decades.",
-  },
-  {
-    label: "Sustainability",
-    body: "ESG, green bonds, and climate-aligned portfolios. Invest in companies the future is rooting for.",
-  },
-  {
-    label: "Mindset",
-    body: "Long-term thinking, patience under volatility, and habits that make wealth inevitable.",
+    body: "Discover stocks, ETFs, mutual funds, and bonds, and practice in a simulator before you risk real money.",
   },
 ];
 
@@ -51,9 +60,9 @@ export default function Solution() {
             </span>
           </h2>
           <p className="mt-5 text-lg text-bone/65 leading-relaxed max-w-xl">
-            EcoVest is a community-driven ecosystem that turns finance from
-            intimidating into intuitive, with sustainability baked into every
-            lesson.
+            EcoVest guides you from beginner to confident investor, step by
+            step. Instead of drowning you in jargon, it simplifies the concepts
+            and lowers the barrier to actually getting started.
           </p>
 
           <ul className="mt-10 space-y-5">
@@ -67,15 +76,7 @@ export default function Solution() {
                 className="flex gap-4 pb-5 border-b border-bone/8 last:border-0"
               >
                 <div className="shrink-0 w-7 h-7 rounded-full border border-brand-300/40 grid place-items-center text-brand-200">
-                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                    <path
-                      d="M2.5 6.5l2.2 2.2L9.5 3.5"
-                      stroke="currentColor"
-                      strokeWidth="1.8"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
+                  <Check size={13} weight="bold" />
                 </div>
                 <div>
                   <div className="font-display text-lg font-semibold tracking-tight text-bone">
@@ -277,15 +278,10 @@ function GrowthCard() {
     >
       <div className="flex items-center justify-between">
         <div className="text-[10px] uppercase tracking-wider text-ink/50">
-          Tidal learning hours
+          Total learning hours
         </div>
-        <div className="inline-flex items-center gap-1 text-[10px] text-brand-600 font-medium">
-          <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
-            <path
-              d="M4 1L7 5H5v2H3V5H1L4 1Z"
-              fill="currentColor"
-            />
-          </svg>
+        <div className="inline-flex items-center gap-1 text-[10px] text-brand-600 font-medium tabular-nums">
+          <TrendUp size={11} weight="bold" />
           12%
         </div>
       </div>
@@ -342,10 +338,10 @@ function GrowthCard() {
 
 function CategoriesGrid() {
   const cats = [
-    { label: "Finance", icon: <FinanceIcon /> },
-    { label: "Invest", icon: <InvestIcon /> },
-    { label: "Sustain", icon: <SustainIcon /> },
-    { label: "Mindset", icon: <MindsetIcon /> },
+    { label: "Learn", icon: <GraduationCap size={17} weight="duotone" /> },
+    { label: "Invest", icon: <ChartLineUp size={17} weight="duotone" /> },
+    { label: "Trade", icon: <TrendUp size={17} weight="duotone" /> },
+    { label: "AI Coach", icon: <Robot size={17} weight="duotone" /> },
   ];
   return (
     <div className="mt-4">
@@ -385,20 +381,7 @@ function UpNext() {
       className="mt-3 rounded-2xl bg-bone/8 border border-bone/10 p-3 flex items-center gap-3"
     >
       <div className="w-8 h-8 rounded-lg bg-brand-300/20 grid place-items-center text-brand-100">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-          <path
-            d="M5 5h14v14H5z"
-            stroke="currentColor"
-            strokeWidth="1.6"
-          />
-          <path
-            d="M9 12l2 2 4-4"
-            stroke="currentColor"
-            strokeWidth="1.6"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
+        <BookOpenText size={15} weight="duotone" />
       </div>
       <div className="flex-1 min-w-0">
         <div className="text-[10px] uppercase tracking-wider text-bone/55">
@@ -409,88 +392,8 @@ function UpNext() {
         </div>
       </div>
       <div className="shrink-0 w-7 h-7 rounded-full bg-bone text-ink grid place-items-center">
-        <svg width="10" height="10" viewBox="0 0 12 12" fill="none">
-          <path
-            d="M3.5 2.5L8.5 6L3.5 9.5"
-            stroke="currentColor"
-            strokeWidth="1.6"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
+        <CaretRight size={11} weight="bold" />
       </div>
     </motion.div>
-  );
-}
-
-/* ----------- icons ----------- */
-
-function FinanceIcon() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-      <path
-        d="M2 9l10-5 10 5-10 5L2 9Z"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M6 11v4c2 1.5 4 2 6 2s4-.5 6-2v-4"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
-function InvestIcon() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-      <path
-        d="M4 18V8M10 18V4M16 18v-7M22 18H2"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinecap="round"
-      />
-    </svg>
-  );
-}
-
-function SustainIcon() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-      <path
-        d="M20 4c-9 0-13 5-13 11 0 2 1 4 2 5 0-7 5-11 11-13Z"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M8 20c2-5 6-9 11-11"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinecap="round"
-      />
-    </svg>
-  );
-}
-
-function MindsetIcon() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-      <path
-        d="M9 4a4 4 0 00-4 4v1a3 3 0 00-1 5v2a3 3 0 003 3h2v-2M15 4a4 4 0 014 4v1a3 3 0 011 5v2a3 3 0 01-3 3h-2v-2"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M12 4v16"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinecap="round"
-      />
-    </svg>
   );
 }

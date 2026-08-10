@@ -2,6 +2,12 @@
 
 import { motion } from "framer-motion";
 import { ReactNode } from "react";
+import {
+  UsersThree,
+  ChartLineUp,
+  Bank,
+  Planet,
+} from "@phosphor-icons/react/dist/ssr";
 
 const phases: {
   quarter: string;
@@ -10,87 +16,28 @@ const phases: {
   body: string;
 }[] = [
   {
-    quarter: "Q1",
-    label: "Community",
-    body: "Build strong community and awareness around finance and sustainability.",
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-        <circle cx="9" cy="8" r="3" stroke="currentColor" strokeWidth="1.7" />
-        <circle cx="17" cy="9" r="2.4" stroke="currentColor" strokeWidth="1.7" />
-        <path
-          d="M3 19c0-3.3 2.7-6 6-6s6 2.7 6 6M14 19c0-2.6 1.9-4.7 4.5-4.9"
-          stroke="currentColor"
-          strokeWidth="1.7"
-          strokeLinecap="round"
-        />
-      </svg>
-    ),
+    quarter: "Phase 1",
+    label: "Foundation",
+    body: "Community, EcoVest Academy, AI chat, and the budget tracker.",
+    icon: <UsersThree size={26} weight="duotone" />,
   },
   {
-    quarter: "Q2",
-    label: "Education",
-    body: "Deliver high-value finance education and resources, built for short attention spans.",
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-        <path
-          d="M3 5h7c1.5 0 2 .5 2 2v12c-.5-1-1.5-1.5-3-1.5H3V5ZM21 5h-7c-1.5 0-2 .5-2 2v12c.5-1 1.5-1.5 3-1.5h6V5Z"
-          stroke="currentColor"
-          strokeWidth="1.7"
-          strokeLinejoin="round"
-        />
-      </svg>
-    ),
+    quarter: "Phase 2",
+    label: "Practice",
+    body: "Investment simulator, daily financial news, and savings goal tracking.",
+    icon: <ChartLineUp size={26} weight="duotone" />,
   },
   {
-    quarter: "Q3",
-    label: "Platform",
-    body: "Launch the platform with personalized tools, data, and lesson tracking.",
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-        <rect
-          x="3"
-          y="4"
-          width="18"
-          height="13"
-          rx="2"
-          stroke="currentColor"
-          strokeWidth="1.7"
-        />
-        <path
-          d="M8 20h8M12 17v3"
-          stroke="currentColor"
-          strokeWidth="1.7"
-          strokeLinecap="round"
-        />
-      </svg>
-    ),
+    quarter: "Phase 3",
+    label: "Invest",
+    body: "EcoVest Invest and portfolio tracking, through licensed partners.",
+    icon: <Bank size={26} weight="duotone" />,
   },
   {
-    quarter: "Q4",
+    quarter: "Phase 4 & 5",
     label: "Ecosystem",
-    body: "Scale globally and bring finance, sustainability, and community into one ecosystem.",
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-        <path
-          d="M9 13l2 2 5-6 3 3-8 9-5-5 3-3Z"
-          stroke="currentColor"
-          strokeWidth="1.7"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M14 4c2.5.5 4.5 2.5 5 5"
-          stroke="currentColor"
-          strokeWidth="1.7"
-          strokeLinecap="round"
-        />
-        <path
-          d="M5 18l-2 3M8 21l-1.5-1"
-          stroke="currentColor"
-          strokeWidth="1.7"
-          strokeLinecap="round"
-        />
-      </svg>
-    ),
+    body: "EcoVest Trade, Quant, Skills, and Capital, expanding across Africa.",
+    icon: <Planet size={26} weight="duotone" />,
   },
 ];
 
@@ -123,7 +70,7 @@ export default function Roadmap() {
             </h2>
           </div>
           <div className="text-sm text-ink/55 md:text-right max-w-xs">
-            Four phases. One mission. We&rsquo;ll keep this page updated as
+            Five phases. One mission. We&rsquo;ll keep this page updated as
             milestones ship.
           </div>
         </div>

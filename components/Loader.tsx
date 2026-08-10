@@ -81,7 +81,7 @@ export default function Loader() {
           transition={{ delay: 1.45, duration: 0.5 }}
           className="mt-2.5 text-[11px] uppercase tracking-[0.28em] text-ink/45"
         >
-          Smart Finance · Sustainable Future
+          Building Financial Intelligence
         </motion.div>
       </div>
     </div>

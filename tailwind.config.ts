@@ -28,23 +28,13 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: [
-          "Inter",
-          "-apple-system",
-          "BlinkMacSystemFont",
-          "system-ui",
-          "sans-serif",
-        ],
-        display: [
-          "Space Grotesk",
-          "Inter",
-          "-apple-system",
-          "system-ui",
-          "sans-serif",
-        ],
+        sans: ["Public Sans", "system-ui", "sans-serif"],
+        display: ["Fraunces", "Georgia", "serif"],
       },
       letterSpacing: {
-        tightest: "-0.04em",
+        // Fraunces is a serif: it needs far less negative tracking at display
+        // sizes than the geometric sans this scale was originally built for.
+        tightest: "-0.018em",
       },
       animation: {
         "fade-up": "fadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) both",

@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { Compass } from "@phosphor-icons/react/dist/ssr";
 
 export default function Vision() {
   return (
@@ -13,29 +14,26 @@ export default function Vision() {
             Our Vision
           </div>
           <h2 className="font-display text-4xl md:text-5xl lg:text-[56px] leading-[1.05] tracking-tightest text-ink">
-            Building <span className="text-brand-600">financially intelligent</span> and{" "}
-            <span className="text-brand-600">sustainability-driven</span> youth, prepared for the future economy.
+            Africa&rsquo;s most{" "}
+            <span className="text-brand-600">trusted financial growth</span>{" "}
+            platform, for millions of{" "}
+            <span className="text-brand-600">young people</span>.
           </h2>
           <p className="mt-6 text-lg text-ink/65 leading-relaxed max-w-xl">
-            We&rsquo;re not building another finance app. We&rsquo;re building the
-            generation that won&rsquo;t need one, because they&rsquo;ll already know
-            how to think, save, invest, and grow.
+            The knowledge, tools, community, and confidence to build lasting
+            wealth and make informed financial decisions. Beginning in Nigeria,
+            expanding to Ghana, Kenya, South Africa, and beyond.
           </p>
 
           <div className="mt-10 inline-flex items-center gap-3 px-5 py-4 rounded-2xl bg-bone border border-ink/8 shadow-sm">
             <div className="w-10 h-10 rounded-full bg-brand-600 grid place-items-center text-bone">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M20 4c-9 0-13 5-13 11 0 2 1 4 2 5 0-7 5-11 11-13Z"
-                  stroke="currentColor"
-                  strokeWidth="1.8"
-                  strokeLinejoin="round"
-                />
-              </svg>
+              <Compass size={18} weight="duotone" />
             </div>
             <div className="text-sm leading-tight">
-              <div className="font-display font-semibold text-ink">Smart Finance</div>
-              <div className="text-ink/60">Sustainable Future · Stronger Youth</div>
+              <div className="font-display font-semibold text-ink">
+                Building Financial Intelligence
+              </div>
+              <div className="text-ink/60">Learn · Earn · Invest · Grow</div>
             </div>
           </div>
         </div>

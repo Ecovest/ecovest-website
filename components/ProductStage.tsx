@@ -2,6 +2,12 @@
 
 import { motion } from "framer-motion";
 import { ReactNode } from "react";
+import {
+  UsersThree,
+  Play,
+  Bank,
+  CirclesThreePlus,
+} from "@phosphor-icons/react/dist/ssr";
 
 const stages: {
   number: string;
@@ -12,83 +18,31 @@ const stages: {
 }[] = [
   {
     number: "01",
-    label: "Community",
+    label: "Community & Academy",
     status: "Now",
-    body: "Community-based learning platform, the foundation everything else is built on.",
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-        <circle cx="9" cy="8" r="3" stroke="currentColor" strokeWidth="1.7" />
-        <circle cx="17" cy="9" r="2.4" stroke="currentColor" strokeWidth="1.7" />
-        <path
-          d="M3 19c0-3.3 2.7-6 6-6s6 2.7 6 6M14 19c0-2.6 1.9-4.7 4.5-4.9"
-          stroke="currentColor"
-          strokeWidth="1.7"
-          strokeLinecap="round"
-        />
-      </svg>
-    ),
+    body: "Community, EcoVest Academy, AI chat, and the budget tracker, the foundation everything else builds on.",
+    icon: <UsersThree size={26} weight="duotone" />,
   },
   {
     number: "02",
-    label: "Education",
+    label: "Simulator & Goals",
     status: "Next",
-    body: "Structured finance content, lessons, and engagement loops that compound knowledge.",
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-        <path
-          d="M3 5h7c1.5 0 2 .5 2 2v12c-.5-1-1.5-1.5-3-1.5H3V5ZM21 5h-7c-1.5 0-2 .5-2 2v12c.5-1 1.5-1.5 3-1.5h6V5Z"
-          stroke="currentColor"
-          strokeWidth="1.7"
-          strokeLinejoin="round"
-        />
-      </svg>
-    ),
+    body: "Investment simulator, daily financial news, and savings goals you can set and actually hit.",
+    icon: <Play size={26} weight="duotone" />,
   },
   {
     number: "03",
-    label: "AI Tools",
+    label: "EcoVest Invest",
     status: "Soon",
-    body: "AI-powered finance tools and personalized insights tuned to each learner.",
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-        <rect
-          x="5"
-          y="5"
-          width="14"
-          height="14"
-          rx="2.5"
-          stroke="currentColor"
-          strokeWidth="1.7"
-        />
-        <path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
-        <text
-          x="12"
-          y="14.5"
-          textAnchor="middle"
-          fontSize="6"
-          fontWeight="700"
-          fill="currentColor"
-        >
-          AI
-        </text>
-      </svg>
-    ),
+    body: "Access regulated investment products through licensed partners, plus portfolio tracking.",
+    icon: <Bank size={26} weight="duotone" />,
   },
   {
     number: "04",
     label: "Full Ecosystem",
     status: "Future",
-    body: "A complete EcoVest digital ecosystem: finance, sustainability, and community as one.",
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-        <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.7" />
-        <path
-          d="M3 12h18M12 3c2.5 3 2.5 15 0 18M12 3c-2.5 3-2.5 15 0 18"
-          stroke="currentColor"
-          strokeWidth="1.7"
-        />
-      </svg>
-    ),
+    body: "EcoVest Trade, Quant, Skills, and Capital, the complete learn-earn-invest ecosystem.",
+    icon: <CirclesThreePlus size={26} weight="duotone" />,
   },
 ];
 
@@ -115,9 +69,9 @@ export default function ProductStage() {
             </span>
           </h2>
           <p className="mt-5 text-lg text-ink/60 leading-relaxed max-w-2xl">
-            EcoVest isn&rsquo;t a single drop. It&rsquo;s a four-stage build.
-            We&rsquo;re shipping the community first, then layering on education,
-            AI tools, and the full ecosystem.
+            EcoVest isn&rsquo;t a single drop. It&rsquo;s a phased build.
+            We&rsquo;re shipping the community, academy, and AI chat first, then
+            layering on simulation, regulated investing, and the full ecosystem.
           </p>
         </div>
 

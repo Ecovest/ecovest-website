@@ -8,12 +8,12 @@ type Msg = { role: "user" | "model"; content: string };
 const WELCOME: Msg = {
   role: "model",
   content:
-    "Hey 👋 I'm EcoBot. Ask me anything about EcoVest, finance, or sustainable investing. What would you like to know?",
+    "Hey, I'm EcoBot. Ask me anything about EcoVest, personal finance, or investing. What would you like to know?",
 };
 
 const SUGGESTIONS = [
   "What is EcoVest?",
-  "How does sustainable investing work?",
+  "What does the AI Financial Coach do?",
   "When does the platform launch?",
   "Is this for total beginners?",
 ];
@@ -200,10 +200,9 @@ export default function Chatbot() {
                 <Bubble key={i} role={m.role} content={m.content} />
               ))}
 
-              {streaming &&
-                messages[messages.length - 1]?.content === "" && (
-                  <TypingDots />
-                )}
+              {streaming && messages[messages.length - 1]?.content === "" && (
+                <TypingDots />
+              )}
 
               {messages.length === 1 && (
                 <div className="pt-2 flex flex-wrap gap-2">
@@ -259,8 +258,7 @@ export default function Chatbot() {
                 </button>
               </div>
               <p className="mt-2 text-[10px] text-ink/40 text-center">
-                EcoBot can be wrong. For big decisions, talk to a qualified
-                professional.
+                EcoBot can be wrong.
               </p>
             </form>
           </motion.div>
@@ -287,20 +285,17 @@ function Header({
           <div className="font-display text-sm font-semibold text-ink leading-tight">
             EcoBot
           </div>
-          <div className="text-[11px] text-ink/55 flex items-center gap-1.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-            Online · usually under 5 sec
-          </div>
+          <div className="text-[11px] text-ink/55 flex items-center gap-1.5"></div>
         </div>
       </div>
       <div className="flex items-center gap-1">
-        <button
+        {/* <button
           onClick={onReset}
           className="px-2.5 py-1 rounded-full text-[11px] text-ink/55 hover:text-ink hover:bg-ink/5 transition"
           aria-label="Reset conversation"
         >
           Reset
-        </button>
+        </button> */}
         <button
           onClick={onClose}
           className="w-8 h-8 rounded-full grid place-items-center text-ink/60 hover:text-ink hover:bg-ink/5 transition"

@@ -3,27 +3,28 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import { Plus } from "@phosphor-icons/react/dist/ssr";
 
 const faqs: { q: string; a: string }[] = [
   {
     q: "What is EcoVest?",
-    a: "EcoVest is a community-driven platform that teaches young people how money actually works, and how to invest it in a way that builds wealth without burning the planet. Financial literacy, sustainable investing, and a community that takes the long game seriously, all in one place.",
+    a: "EcoVest is an AI-powered financial growth ecosystem that empowers individuals to learn, earn, invest, and build long-term wealth through education, technology, and community. It brings financial education, investing, trading, AI guidance, planning tools, and career development into one platform. Beginning in Nigeria, EcoVest aims to become Africa's leading financial growth ecosystem.",
   },
   {
     q: "What are the features?",
-    a: "Four core pillars: Finance Basics (budgeting, credit, taxes), Investing (index funds, compounding, risk), Sustainability (ESG, green bonds, climate-aligned portfolios), and Mindset (the habits and patience that make wealth inevitable). On top of that: a peer community, structured lesson tracks, and AI-powered finance tools shipping in the next phase.",
+    a: "EcoVest Academy (structured courses in personal finance, investing, trading, Wall Street analysis, fintech, quant, and digital skills), an AI Financial Coach, a Community Hub, investment discovery, a financial goals tracker, a budget planner, daily financial news, an investment simulator, and certificates on course completion.",
   },
   {
-    q: "Why is it good?",
-    a: "Most finance education is either locked behind jargon and 400-page books, or hidden inside trading apps that just want you to gamble. EcoVest is built for short attention spans, taught in 5-minute lessons you actually finish, and grounded in sustainability, so the wealth you build is wealth the future can still spend.",
+    q: "Who is it for?",
+    a: "University students, NYSC members, young professionals, first-time investors, and young entrepreneurs, ages 11 to 65. Students, employees, freelancers, creators, and small business owners. Launching in Nigeria, then expanding to Ghana, Kenya, South Africa, and other African countries.",
   },
   {
-    q: "How competitive is it?",
-    a: "The space splits into two camps: 'learn finance' apps that are dry and theoretical, and 'invest now' apps that skip the education. EcoVest sits in the gap with three things neither does well: a real community for accountability, a sustainability lens on every lesson, and pricing built for students, not hedge-fund analysts.",
+    q: "What makes EcoVest different?",
+    a: "Most competitors focus on one area: investing, saving, education, or advice. Platforms like Risevest, Bamboo, Trove, PiggyVest, and Cowrywise assume you already understand finance, while Coursera, Udemy, and YouTube rarely give you a path to taking action. EcoVest brings all of it together in a single platform, enhanced with AI, community learning, and a focus on sustainable wealth creation.",
   },
   {
-    q: "What are my gains?",
-    a: "Hard skills: financial literacy you can actually apply, an investing playbook that compounds for decades, and a sustainability framework most adults don't have. Softer ones: long-term thinking, money habits that quietly change your life, and an early-mover seat in a community that's going to matter.",
+    q: "What does it cost?",
+    a: "Freemium. Free gets you basic courses, community access, limited AI chat, and financial news. Premium adds advanced courses, unlimited AI assistance, exclusive webinars, investment analysis, portfolio insights, and priority support.",
   },
 ];
 
@@ -113,14 +114,7 @@ export default function FAQ() {
                             : "group-hover:border-brand-500 group-hover:text-brand-600"
                         }`}
                       >
-                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                          <path
-                            d="M6 1v10M1 6h10"
-                            stroke="currentColor"
-                            strokeWidth="1.6"
-                            strokeLinecap="round"
-                          />
-                        </svg>
+                        <Plus size={13} weight="bold" />
                       </span>
                     </button>
 
