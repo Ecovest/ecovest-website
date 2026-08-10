@@ -132,3 +132,12 @@ html {
   border-radius: 4px;
   font-size: 0.85em;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+  }
+  .marquee-wave > * {
+    transform: none !important;
+  }
+}
