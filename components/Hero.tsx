@@ -1,13 +1,8 @@
 "use client";
 
-import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import WaitlistForm from "./WaitlistForm";
-
-const Hero3D = dynamic(() => import("./Hero3D"), {
-  ssr: false,
-  loading: () => <div className="absolute inset-0" />,
-});
+import PhoneMockup from "./PhoneMockup";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -96,9 +91,10 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        <div className="lg:col-span-6 relative h-[420px] sm:h-[520px] lg:h-[620px]">
-          <Hero3D />
-          {/* tiny labels around the scene */}
+        <div className="lg:col-span-6 relative mt-14 lg:mt-0 flex items-center justify-center lg:h-[620px]">
+          <PhoneMockup />
+
+          {/* tiny labels around the phone */}
           <FloatingTag
             className="top-8 right-4"
             text="AI Financial Coach"

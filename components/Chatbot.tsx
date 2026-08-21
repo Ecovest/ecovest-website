@@ -137,12 +137,15 @@ export default function Chatbot() {
 
   return (
     <>
-      {/* Floating launcher */}
+      {/* Floating launcher (hidden on mobile once the panel is open, since the
+          panel's own header close button sits in the same corner) */}
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
         aria-label={open ? "Close EcoBot" : "Open EcoBot"}
-        className="fixed bottom-5 right-5 md:bottom-7 md:right-7 z-[60] w-14 h-14 rounded-full bg-ink text-bone grid place-items-center shadow-xl hover:bg-brand-600 transition-colors group"
+        className={`fixed bottom-5 right-5 md:bottom-7 md:right-7 z-[60] w-14 h-14 rounded-full bg-ink text-bone grid place-items-center shadow-xl hover:bg-brand-600 transition-colors group ${
+          open ? "hidden md:grid" : ""
+        }`}
       >
         <span className="absolute inset-0 rounded-full bg-brand-500/30 animate-ping opacity-40 group-hover:opacity-0" />
         <AnimatePresence mode="wait" initial={false}>
