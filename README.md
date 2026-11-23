@@ -1,6 +1,6 @@
 # EcoVest landing page
 
-Marketing site for [EcoVest](https://ecovest.community): learn how money works, practise investing with pretend money, and invest through licensed partners when you're ready. Built for young Africans, starting in Nigeria.
+ learn how money works, practise investing with pretend money, and invest through licensed partners when you're ready. Built for young Africans, starting in Nigeria.
 
 ## Stack
 
