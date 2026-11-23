@@ -6,8 +6,8 @@ import { delay, useInView } from "@/lib/useInView";
 
 /*
  * How it works, following the user's reference: illustration on the left,
- * three numbered steps on the right. The active step sits in a white card with
- * a soft shadow and moves on by itself (pauses on hover; click to pick one).
+ * three numbered steps on the right. The active step's number turns green and
+ * moves on by itself (pauses on hover; click to pick one).
  * ILLUSTRATION: drop the user's transparent PNG at /public/illustrations/how-it-works.png
  * and set HAS_ILLUSTRATION to true.
  */
@@ -79,9 +79,7 @@ export default function HowItWorks() {
                     type="button"
                     onClick={() => setActive(i)}
                     aria-current={on ? "step" : undefined}
-                    className={`flex w-full gap-4 rounded-[18px] px-4 py-4 text-left transition-[background-color,box-shadow] duration-500 lg:rounded-[22px] lg:px-6 lg:py-5 ${
-                      on ? "bg-white shadow-[0_12px_32px_-12px_rgba(16,40,26,0.18),0_0_0_1px_rgba(16,24,20,0.04)]" : "bg-transparent"
-                    }`}
+                    className="flex w-full gap-4 rounded-[18px] px-4 py-4 text-left lg:rounded-[22px] lg:px-6 lg:py-5"
                   >
                     <span
                       className={`grid h-8 w-8 shrink-0 place-items-center rounded-full text-[14px] font-medium transition-colors duration-500 lg:h-9 lg:w-9 lg:text-[15px] ${
