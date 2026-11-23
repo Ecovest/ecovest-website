@@ -1,78 +1,101 @@
-import Link from "next/link";
-import Logo from "./Logo";
+"use client";
+
+import { Mail01Icon, TiktokIcon, WhatsappIcon } from "@hugeicons/core-free-icons";
+import LogoMark from "@/components/LogoMark";
+import MeadowRiseFooter from "@/components/ui/meadow-rise-footer";
+
+/*
+ * CTA + footer: the Meadow Rise footer, recoloured to EcoVest greens.
+ * The email signup stays off until a real mailing list is connected,
+ * so nobody gets a fake "you're subscribed".
+ */
+
+const ECOVEST_PALETTE = {
+  sky: ["#fefefe", "#e8f1eb"] as [string, string],
+  haze: "#e1ece4",
+  glow: "#fffdf4",
+  hills: [
+    ["#b9d9c4", "#a2c8b0"],
+    ["#94cfa6", "#73b58a"],
+    ["#6cc08a", "#4a9f6b"],
+    ["#45a96c", "#2f8653"],
+    ["#228a52", "#156b3d"],
+    ["#0f5a33", "#08391f"],
+  ] as [string, string][],
+  ground: "#032a16",
+  ink: "#101010",
+  sub: "#3e4641",
+  pill: "#02381c",
+  pillInk: "#ffffff",
+  text: "#eef6f0",
+  muted: "#9fbfab",
+  line: "rgba(238,246,240,0.16)",
+};
 
 export default function Footer() {
   return (
-    <footer className="border-t border-ink/8 py-14">
-      <div className="max-w-7xl mx-auto px-6 md:px-10 grid md:grid-cols-12 gap-10">
-        <div className="md:col-span-5">
-          <Logo />
-          <p className="mt-5 text-sm text-ink/55 max-w-sm leading-relaxed">
-            EcoVest Technologies Ltd. An AI-powered financial growth ecosystem
-            for young Africans. Learn · Earn · Invest · Grow.
-          </p>
-        </div>
-
-        <FooterCol
-          title="Platform"
-          links={[
-            ["Problem", "/#problem"],
-            ["Solution", "/#solution"],
-            ["Roadmap", "/#roadmap"],
-            ["FAQ", "/#faq"],
-            ["Waitlist", "/#waitlist"],
-          ]}
-        />
-        <FooterCol
-          title="Company"
-          links={[
-            ["About", "/about"],
-            ["Careers", "/careers"],
-            ["Press kit", "/press"],
-            ["Contact", "/contact"],
-          ]}
-        />
-        <FooterCol
-          title="Legal"
-          links={[
-            ["Privacy", "/privacy"],
-            ["Terms", "/terms"],
-            ["Cookies", "/cookies"],
-          ]}
-        />
-      </div>
-
-      <div className="max-w-7xl mx-auto px-6 md:px-10 mt-14 pt-6 border-t border-ink/8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-xs text-ink/45">
-        <div>© {new Date().getFullYear()} EcoVest. All rights reserved.</div>
-        <div className="flex items-center gap-5">
-          <a href="#" className="hover:text-ink transition">Twitter / X</a>
-          <a href="#" className="hover:text-ink transition">Instagram</a>
-          <a href="#" className="hover:text-ink transition">LinkedIn</a>
-        </div>
-      </div>
-    </footer>
+    <MeadowRiseFooter
+      id="get-started"
+      name="EcoVest"
+      brandHref="/"
+      logo={
+        <span className="grid h-8 w-8 place-items-center rounded-[28%] bg-[linear-gradient(180deg,#5fd897,#00a050)]">
+          <LogoMark className="h-[60%] w-[60%] text-white" />
+        </span>
+      }
+      heading={"Grow your money\n*with confidence*"}
+      subheading="It's free to join, and the EcoVest community is open now."
+      cta={{ label: "Get started free", href: "/#get-started" }}
+      tagline="Money lessons, an AI coach and a community for young Africans."
+      newsletter={false}
+      columns={[
+        {
+          title: "Product",
+          links: [
+            { label: "How it works", href: "/#how-it-works" },
+            { label: "Features", href: "/#features" },
+            { label: "Pocketer", href: "/#features" },
+            { label: "AI Coach", href: "/#features" },
+          ],
+        },
+        {
+          title: "Company",
+          links: [
+            { label: "About", href: "/#problem" },
+            { label: "Blog", href: "/blog" },
+            { label: "Contact", href: "mailto:Ecovest00@gmail.com" },
+          ],
+        },
+        {
+          title: "Resources",
+          links: [
+            { label: "FAQs", href: "/#faq" },
+            { label: "Community", href: "https://wa.me/2349163655638" },
+            { label: "Help centre", href: "mailto:Ecovest00@gmail.com?subject=Help" },
+            { label: "Risk disclosure", href: "/risk" },
+          ],
+        },
+      ]}
+      socialTitle="Follow us"
+      socials={[
+        { icon: TiktokIcon, label: "TikTok", href: "https://www.tiktok.com/@ecovest.official" },
+        { icon: WhatsappIcon, label: "WhatsApp", href: "https://wa.me/2349163655638" },
+        { icon: Mail01Icon, label: "Email", href: "mailto:Ecovest00@gmail.com" },
+      ]}
+      copyright="© 2026 EcoVest Technologies Ltd. Investing involves risk."
+      legal={[
+        { label: "Privacy Policy", href: "/privacy" },
+        { label: "Terms & Conditions", href: "/terms" },
+        { label: "Cookie Policy", href: "/cookies" },
+      ]}
+      preset="meadow"
+      palette={ECOVEST_PALETTE}
+      height="auto"
+      heroHeight="clamp(420px, 62svh, 640px)"
+      maxWidth="1280px"
+      fontFamily="var(--font-body), Archivo, system-ui, sans-serif"
+      serifFamily="var(--font-serif), Georgia, serif"
+    />
   );
 }
 
-function FooterCol({
-  title,
-  links,
-}: {
-  title: string;
-  links: [string, string][];
-}) {
-  return (
-    <div className="md:col-span-2">
-      <div className="text-xs uppercase tracking-[0.18em] text-ink/40 mb-4">{title}</div>
-      <ul className="space-y-2.5 text-sm">
-        {links.map(([label, href]) => (
-          <li key={label}>
-            <Link href={href} className="text-ink/75 hover:text-brand-600 transition">
-              {label}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-}

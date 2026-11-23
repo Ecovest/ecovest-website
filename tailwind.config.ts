@@ -1,59 +1,44 @@
 import type { Config } from "tailwindcss";
 
+// Palette built in OKLCH (see docs/foundations.html), stored as sRGB hex.
 const config: Config = {
   content: ["./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}"],
   theme: {
     extend: {
       colors: {
+        green: {
+          50: "#ebfcef", 100: "#d4f7de", 200: "#b1eec3", 300: "#82dfa2", 400: "#44c97c",
+          500: "#01ad5f", 600: "#058b4c", 700: "#016d3a", 800: "#00522a", 900: "#02381c", 950: "#00200d",
+        },
+        leaf: {
+          50: "#edfcea", 100: "#d9f7d3", 200: "#baedaf", 300: "#93de83", 400: "#65c74e",
+          500: "#44ab28", 600: "#2f8b11", 700: "#1f6d03", 800: "#165204", 900: "#0e3803", 950: "#042000",
+        },
         ink: {
-          DEFAULT: "#0B0F0C",
-          soft: "#1A201C",
-          muted: "#6B7670",
+          50: "#f5f8f6", 100: "#eaeeeb", 200: "#d8deda", 300: "#c2c9c5", 400: "#a6afaa",
+          500: "#8a938e", 600: "#6e7772", 700: "#555d58", 800: "#3e4641", 900: "#29302c", 950: "#151b18",
         },
-        bone: {
-          DEFAULT: "#F7F8F4",
-          warm: "#EFEFE7",
+        gold: {
+          50: "#fff5e7", 100: "#fdeace", 200: "#f7d7a7", 300: "#edbf75", 400: "#dba037",
+          500: "#be8401", 600: "#996a04", 700: "#785304", 800: "#5b3d02", 900: "#3f2901", 950: "#251600",
         },
-        brand: {
-          50: "#EAF5EC",
-          100: "#C9E5CE",
-          200: "#9CD0A6",
-          300: "#6FBA7E",
-          400: "#43A356",
-          500: "#2E7D32",
-          600: "#1F5F26",
-          700: "#16451B",
-          800: "#0E2D12",
-          900: "#071A09",
-        },
+        // Semantic roles
+        canvas: "#ffffff",
+        paper: "#fefefe",
+        brand: { DEFAULT: "#02381c", hover: "#00522a", soft: "#ebfcef" },
+        icon: "#151b18",
       },
       fontFamily: {
-        sans: ["Public Sans", "system-ui", "sans-serif"],
-        display: ["Fraunces", "Georgia", "serif"],
+        display: ["var(--font-display)", "system-ui", "sans-serif"],
+        sans: ["var(--font-body)", "system-ui", "sans-serif"],
+        serif: ["var(--font-serif)", "Georgia", "serif"],
       },
       letterSpacing: {
-        // Fraunces is a serif: it needs far less negative tracking at display
-        // sizes than the geometric sans this scale was originally built for.
-        tightest: "-0.018em",
+        tightest: "-0.045em",
+        snug: "-0.012em",
       },
-      animation: {
-        "fade-up": "fadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) both",
-        float: "float 6s ease-in-out infinite",
-        marquee: "marquee 40s linear infinite",
-      },
-      keyframes: {
-        fadeUp: {
-          "0%": { opacity: "0", transform: "translateY(20px)" },
-          "100%": { opacity: "1", transform: "translateY(0)" },
-        },
-        float: {
-          "0%, 100%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-10px)" },
-        },
-        marquee: {
-          "0%": { transform: "translateX(0)" },
-          "100%": { transform: "translateX(-50%)" },
-        },
+      maxWidth: {
+        page: "1200px",
       },
     },
   },

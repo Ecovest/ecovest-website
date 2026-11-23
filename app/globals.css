@@ -2,142 +2,63 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --bg: #F7F8F4;
-  --ink: #0B0F0C;
-}
-
-html,
-body {
-  background: var(--bg);
-  color: var(--ink);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-}
-
-* {
-  box-sizing: border-box;
-  -webkit-tap-highlight-color: transparent;
-}
-
-/* keep focus rings for keyboard users, drop them for mouse/touch clicks */
-:focus:not(:focus-visible) {
-  outline: none;
-}
-
-::selection {
-  background: #1F5F26;
-  color: #F7F8F4;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-.grain::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.035;
-  mix-blend-mode: multiply;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
-}
-
-.hairline {
-  position: relative;
-}
-.hairline::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 1px;
-  background: rgba(11, 15, 12, 0.08);
-}
-
-@layer components {
-  .btn-primary {
-    background: #0B0F0C;
-    color: #F7F8F4;
-    border-radius: 999px;
-    padding: 0.85rem 1.5rem;
-    font-weight: 500;
-    letter-spacing: -0.01em;
-    transition: transform 0.2s ease, background 0.2s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+    /* in-page links land below the fixed header */
+    scroll-padding-top: 96px;
+    /* no grey/blue flash when tapping links and buttons on phones */
+    -webkit-tap-highlight-color: transparent;
   }
-  .btn-primary:hover {
-    background: #1F5F26;
-    transform: translateY(-1px);
+  /* No browser focus ring on mouse/touch clicks; keyboard users keep :focus-visible below. */
+  :focus:not(:focus-visible) {
+    outline: none;
   }
-
-  .btn-ghost {
-    border: 1px solid rgba(11, 15, 12, 0.15);
-    color: #0B0F0C;
-    border-radius: 999px;
-    padding: 0.85rem 1.5rem;
-    font-weight: 500;
-    letter-spacing: -0.01em;
-    transition: border-color 0.2s ease, background 0.2s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
+  a, button, [role="button"] {
+    -webkit-touch-callout: none;
+    touch-action: manipulation;
   }
-  .btn-ghost:hover {
-    border-color: #1F5F26;
-    background: rgba(31, 95, 38, 0.04);
+  body {
+    @apply bg-paper font-sans text-ink-950 antialiased;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display text-ink-950;
+  }
+  ::selection {
+    @apply bg-green-200 text-green-950;
+  }
+  :focus-visible {
+    outline: 2px solid #016d3a;
+    outline-offset: 2px;
   }
 }
 
-.legal-prose h2 {
-  font-family: "Fraunces", Georgia, serif;
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: #0B0F0C;
-  margin-top: 2.25rem;
-  margin-bottom: 0.5rem;
-  letter-spacing: -0.01em;
-}
-.legal-prose h2:first-child {
-  margin-top: 0;
-}
-.legal-prose h3 {
-  font-family: "Fraunces", Georgia, serif;
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: #0B0F0C;
-  margin-top: 1.5rem;
-  margin-bottom: 0.25rem;
-}
-.legal-prose ul {
-  list-style: disc;
-  padding-left: 1.25rem;
-}
-.legal-prose li {
-  margin-bottom: 0.4rem;
-}
-.legal-prose a {
-  color: #1F5F26;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-.legal-prose code {
-  background: rgba(11, 15, 12, 0.05);
-  padding: 1px 6px;
-  border-radius: 4px;
-  font-size: 0.85em;
-}
+/* ---------- Scroll-in animations (Features) ----------
+   Elements with .ev-* start hidden and play once their section gets data-in="true".
+   Looping ones (.ev-float, .ev-glow) run continuously. All off for reduced motion. */
+@keyframes ev-rise { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: none; } }
+@keyframes ev-pop { 0% { opacity: 0; transform: scale(0.5); } 70% { opacity: 1; transform: scale(1.06); } 100% { opacity: 1; transform: scale(1); } }
+@keyframes ev-draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+@keyframes ev-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+@keyframes ev-glow { 0%, 100% { opacity: 0.7; transform: scale(0.98); } 50% { opacity: 1; transform: scale(1.02); } }
+@keyframes ev-drift { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-5px) rotate(2deg); } }
+@keyframes ev-caret { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+
+.ev-rise, .ev-pop { opacity: 0; }
+.ev-draw { stroke-dasharray: 1; stroke-dashoffset: 1; }
+[data-in="true"] .ev-rise { animation: ev-rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both; animation-delay: var(--d, 0ms); }
+[data-in="true"] .ev-pop { animation: ev-pop 0.7s cubic-bezier(0.22, 1, 0.36, 1) both; animation-delay: var(--d, 0ms); }
+[data-in="true"] .ev-draw { animation: ev-draw 1.4s cubic-bezier(0.65, 0, 0.35, 1) both; animation-delay: var(--d, 0ms); }
+.ev-float { animation: ev-float 5s ease-in-out infinite; }
+.ev-glow { animation: ev-glow 4s ease-in-out infinite; }
+.ev-drift { animation: ev-drift 6s ease-in-out infinite; animation-delay: var(--d, 0ms); }
+.ev-caret { animation: ev-caret 1s steps(1) infinite; }
 
 @media (prefers-reduced-motion: reduce) {
-  .animate-marquee {
-    animation: none;
-  }
-  .marquee-wave > * {
-    transform: none !important;
-  }
+  .ev-rise, .ev-pop { opacity: 1; animation: none !important; }
+  .ev-draw { stroke-dashoffset: 0; animation: none !important; }
+  .ev-float, .ev-glow, .ev-drift, .ev-caret { animation: none !important; }
 }

@@ -1,25 +1,22 @@
-import Hero from "@/components/Hero";
-import Marquee from "@/components/Marquee";
-import Problem from "@/components/Problem";
-import Solution from "@/components/Solution";
-import ProductStage from "@/components/ProductStage";
-import Roadmap from "@/components/Roadmap";
-import Vision from "@/components/Vision";
 import FAQ from "@/components/FAQ";
-import CTA from "@/components/CTA";
+import Features from "@/components/Features";
+import Footer from "@/components/Footer";
+import Hero from "@/components/Hero";
+import HowItWorks from "@/components/HowItWorks";
+import Problem from "@/components/Problem";
 
-export default function Page() {
+// Sections get added here one by one as we design them.
+export default function Home() {
   return (
-    <main className="relative overflow-hidden">
+    <>
+    <main>
       <Hero />
-      <Marquee />
       <Problem />
-      <Solution />
-      <ProductStage />
-      <Roadmap />
-      <Vision />
+      <HowItWorks />
+      <Features />
       <FAQ />
-      <CTA />
     </main>
+    <Footer />
+    </>
   );
 }

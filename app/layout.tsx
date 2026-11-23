@@ -1,56 +1,47 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+import { Archivo, Familjen_Grotesk, Instrument_Serif } from "next/font/google";
 import "./globals.css";
-// import Loader from "@/components/Loader";
-import Nav from "@/components/Nav";
-import Footer from "@/components/Footer";
-import Chatbot from "@/components/Chatbot";
+
+// latin-ext is required: it carries the naira (₦) and cedi (₵) signs.
+const display = Familjen_Grotesk({
+  subsets: ["latin", "latin-ext"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-display",
+  display: "swap",
+});
+
+const body = Archivo({
+  subsets: ["latin", "latin-ext"],
+  weight: ["400", "500", "600"],
+  variable: "--font-body",
+  display: "swap",
+});
+
+// Accent word in headlines only (italic), as in the hero design.
+const serif = Instrument_Serif({
+  subsets: ["latin", "latin-ext"],
+  weight: "400",
+  style: "italic",
+  variable: "--font-serif",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://ecovestt.vercel.app"),
   title: "EcoVest · Building Financial Intelligence",
   description:
-    "An AI-powered financial growth ecosystem. Learn, earn, invest, and build long-term wealth through education, technology, and community. Starting in Nigeria.",
-  openGraph: {
-    title: "EcoVest · Building Financial Intelligence",
-    description:
-      "Learn, earn, invest, and build long-term wealth. An AI-powered financial growth ecosystem for young Africans.",
-    type: "website",
-    siteName: "EcoVest",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "EcoVest · Building Financial Intelligence",
-    description:
-      "Learn, earn, invest, and build long-term wealth. An AI-powered financial growth ecosystem for young Africans.",
-  },
+    "Learn how money works, practise investing with pretend money, and invest through licensed partners when you're ready. Built for young Africans, starting in Nigeria.",
+  // Set NEXT_PUBLIC_SITE_URL in the hosting dashboard; see .env.example.
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://ecovest.community"),
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export const viewport: Viewport = {
+  themeColor: "#fefefe",
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=Public+Sans:wght@400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body className="font-sans bg-bone text-ink">
-        {/* <Loader /> */}
-        <Nav />
-        {children}
-        <Footer />
-        <Chatbot />
-      </body>
+    <html lang="en" className={`${display.variable} ${body.variable} ${serif.variable}`}>
+      <body>{children}</body>
     </html>
   );
 }

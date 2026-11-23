@@ -1,146 +1,157 @@
-"use client";
+import { FlashIcon } from "@hugeicons/core-free-icons";
+import Header, { GlowCta } from "@/components/Header";
+import LogoMark from "@/components/LogoMark";
+import { Icon } from "@/components/ui/Icon";
+import PhoneStack from "@/components/PhoneStack";
 
-import { motion } from "framer-motion";
-import WaitlistForm from "./WaitlistForm";
-import PhoneMockup from "./PhoneMockup";
+/*
+ * Hero, rebuilt from the "Hero Sections by Simoom" Figma frame (Desktop - 19),
+ * recoloured to EcoVest green and rewritten for EcoVest.
+ *
+ * Layers, back to front:
+ *  1. Two large tilted triangles with a green gradient (the "BG" polygons).
+ *  2. A frosted layer (backdrop blur) with soft vertical bands on top: this turns the
+ *     triangles into the streaked glow rising from the bottom.
+ *  3. Header, badge, headline, copy and button.
+ *  4. Three Pocketer phones fanned along the bottom edge.
+ */
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
-  show: (i: number = 0) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.8, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] },
-  }),
-};
+const GREEN_FROM = "#01ad5f"; // design: #0F7DFA
+const GREEN_TO = "#9be8b4"; // design: #62CDFF
+
+function Triangle({ id }: { id: string }) {
+  return (
+    <svg viewBox="0 0 1732.05 753.615" preserveAspectRatio="none" className="block h-full w-full" aria-hidden="true">
+      <defs>
+        <linearGradient id={id} x1="597.568" y1="277.763" x2="1023.03" y2="490.184" gradientUnits="userSpaceOnUse">
+          <stop stopColor={GREEN_FROM} />
+          <stop offset="1" stopColor={GREEN_TO} />
+        </linearGradient>
+      </defs>
+      <path d="M866.025 0L1732.05 753.615H0L866.025 0Z" fill={`url(#${id})`} />
+    </svg>
+  );
+}
+
+function Backdrop() {
+  return (
+    <div
+      aria-hidden="true"
+      className="pointer-events-none absolute left-[calc(50%+11.6px)] top-[300px] isolate sm:top-[220px] md:top-[90px] xl:top-0 h-[1657px] w-[3301px] origin-top -translate-x-1/2 scale-[0.45] bg-paper sm:scale-[0.6] md:scale-[0.8] xl:scale-100"
+    >
+      {/* Left triangle: flipped and turned 162° */}
+      <div className="absolute left-0 top-[83px] flex h-[1574px] w-[2213px] items-center justify-center blur-[50px]">
+        <div className="relative h-[1005px] w-[2000px]" style={{ rotate: "162deg", scale: "1 -1" }}>
+          <div className="absolute bottom-1/4 left-[6.7%] right-[6.7%] top-0">
+            <Triangle id="tri-a" />
+          </div>
+        </div>
+      </div>
+      {/* Right triangle: turned 18° */}
+      <div className="absolute left-[1088.6px] top-[83px] flex h-[1574px] w-[2213px] items-center justify-center blur-[50px]">
+        <div className="relative h-[1005px] w-[2000px]" style={{ rotate: "18deg" }}>
+          <div className="absolute bottom-1/4 left-[6.7%] right-[6.7%] top-0">
+            <Triangle id="tri-b" />
+          </div>
+        </div>
+      </div>
+      {/* Frosted bands: in Figma each band blurs what's under it (50px); here the
+          triangles carry that blur and the bands add the soft vertical shading. */}
+      <div className="absolute inset-0" style={{ backgroundPosition: "center top" }}>
+        <div
+          className="absolute inset-0 mix-blend-overlay"
+          style={{
+            backgroundImage:
+              "linear-gradient(90deg, rgba(255,255,255,0.18) 0%, rgba(40,40,40,0.38) 16.667%, rgba(255,255,255,0.12) 100%)",
+            backgroundSize: "65px 100%",
+            backgroundRepeat: "repeat-x",
+          }}
+        />
+      </div>
+    </div>
+  );
+}
+
+/** Glossy EcoVest app icon set into the headline, with a soft glow behind it. */
+function AppIcon() {
+  const tile =
+    "absolute inset-0 grid place-items-center overflow-hidden rounded-[21%] border-[2.3px] border-white bg-[linear-gradient(180deg,#016d3a_0%,#44c97c_100%)]";
+  return (
+    <span aria-hidden="true" className="relative mx-[0.12em] inline-block h-[0.9em] w-[0.9em] translate-y-[0.06em] align-baseline">
+      <span className={`${tile} opacity-80 blur-[20px]`} />
+      <span className={tile}>
+        <span className="absolute inset-0 bg-[radial-gradient(120%_70%_at_50%_0%,rgba(255,255,255,0.45),rgba(255,255,255,0)_60%)]" />
+        <LogoMark className="relative h-[62%] w-[62%] text-white drop-shadow-[0_1px_2px_rgba(0,32,13,0.35)]" />
+      </span>
+    </span>
+  );
+}
 
 export default function Hero() {
   return (
-    <section className="relative pt-32 md:pt-40 pb-20 md:pb-28 overflow-hidden">
-      {/* soft background radial */}
-      <div
-        aria-hidden
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(ellipse at 70% 30%, rgba(67,163,86,0.10), transparent 60%), radial-gradient(ellipse at 20% 80%, rgba(31,95,38,0.06), transparent 55%)",
-        }}
-      />
+    <div className="bg-paper">
+      {/* Full-bleed: spans the whole screen width and at least the screen height. */}
+      <section
+        id="hero"
+        className="relative flex min-h-[100svh] w-full flex-col overflow-hidden rounded-b-[20px] bg-paper"
+      >
+        <Backdrop />
+        <Header />
 
-      <div className="relative max-w-7xl mx-auto px-6 md:px-10 grid lg:grid-cols-12 gap-10 items-center">
-        <div className="lg:col-span-6 z-10">
-          {/* <motion.div
-            initial="hidden"
-            animate="show"
-            custom={0}
-            variants={fadeUp}
-            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-ink/10 text-xs text-ink/70 mb-7"
-          >
-            Now accepting early access
-          </motion.div> */}
-
-          <motion.h1
-            initial="hidden"
-            animate="show"
-            custom={1}
-            variants={fadeUp}
-            className="font-display text-[44px] sm:text-6xl lg:text-7xl leading-[1.02] tracking-tightest text-ink"
-          >
-            Building{" "}
-            <span className="italic font-medium text-brand-600">
-              financial
+        <div className="relative z-10 mx-auto mt-6 flex max-w-[720px] flex-col items-center px-5 text-center md:mt-10 xl:mt-[44px]">
+          <div className="inline-flex items-center gap-1 rounded-[61px] border border-[rgba(1,173,95,0.22)] bg-white px-2.5 py-1.5 sm:px-3 sm:py-2">
+            <Icon icon={FlashIcon} size={16} className="text-green-600" />
+            <span className="text-[12px] uppercase leading-[1.5] tracking-[-0.01em] text-ink-700 sm:text-[14px]">
+              Building financial intelligence
             </span>
+          </div>
+
+          <h1 className="mt-5 font-display text-[36px] font-medium leading-[1.1] tracking-[-0.025em] text-ink-700 sm:mt-6 sm:text-[56px] md:text-[72px]">
+            Learn <AppIcon /> Money
             <br />
-            intelligence.
-          </motion.h1>
+            Grow Your <span className="font-serif text-[1.02em] font-normal italic tracking-[-0.02em]">Future</span>
+          </h1>
 
-          <motion.p
-            initial="hidden"
-            animate="show"
-            custom={2}
-            variants={fadeUp}
-            className="mt-6 text-lg text-ink/65 max-w-xl leading-relaxed"
-          >
-            EcoVest is an AI-powered financial growth ecosystem that helps you
-            learn, earn, invest, and build long-term wealth, through education,
-            technology, and community. Starting in Nigeria, built for Africa.
-          </motion.p>
+          <p className="mt-4 max-w-[622px] text-[15px] leading-[1.45] tracking-[-0.015em] text-ink-700 sm:mt-6 md:text-[18px]">
+            Learn how money works, practise investing with pretend money, and invest through licensed partners when
+            you&apos;re ready. An AI coach answers your questions along the way.
+          </p>
 
-          <motion.div
-            initial="hidden"
-            animate="show"
-            custom={3}
-            variants={fadeUp}
-            className="mt-8 max-w-md"
-          >
-            <WaitlistForm />
-          </motion.div>
-
-          <motion.div
-            initial="hidden"
-            animate="show"
-            custom={4}
-            variants={fadeUp}
-            className="mt-10 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8 text-sm text-ink/55"
-          >
-            {/* <Stat value="2.4K+" label="On the waitlist" /> */}
-            <Divider />
-            <Stat
-              value="4 pillars"
-              label="Education · AI · Community · Investing"
-            />
-          </motion.div>
+          <div className="mt-7 sm:mt-9">
+            <GlowCta href="#get-started">Get started free</GlowCta>
+          </div>
         </div>
 
-        <div className="lg:col-span-6 relative mt-14 lg:mt-0 flex items-center justify-center lg:h-[620px]">
-          <PhoneMockup />
+        {/* Phones start just under the button and fill the rest of the hero; its edge crops them. */}
+        <PhoneStack />
+      </section>
 
-          {/* tiny labels around the phone */}
-          <FloatingTag
-            className="top-8 right-4"
-            text="AI Financial Coach"
-            dot
-          />
-          <FloatingTag
-            className="bottom-10 left-2"
-            text="Learn · Invest · Grow"
-            dot
-          />
-        </div>
+      <Topics />
+    </div>
+  );
+}
+
+const TOPICS = ["Budgeting", "Saving", "Investing", "Stocks & ETFs", "Sustainability", "AI Coach", "Community"];
+
+/** The design's "Trusted by" logo row, rewritten as what EcoVest teaches (no made-up logos or numbers). */
+function Topics() {
+  return (
+    <section className="flex flex-col items-center gap-9 pb-10 pt-16 md:pt-20">
+      <p className="px-5 text-center text-[16px] leading-[1.4] tracking-[-0.015em] text-ink-600 md:text-[18px]">
+        What you&apos;ll{" "}
+        <span className="bg-gradient-to-b from-green-600 to-green-400 bg-clip-text text-transparent">learn on EcoVest</span>
+      </p>
+      <div className="relative w-full max-w-[1225px] overflow-hidden">
+        <ul className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4 px-6 md:flex-nowrap md:gap-12">
+          {TOPICS.map((t) => (
+            <li key={t} className="whitespace-nowrap font-display text-[20px] font-semibold tracking-[-0.03em] text-ink-600 md:text-[24px]">
+              {t}
+            </li>
+          ))}
+        </ul>
+        <div className="pointer-events-none absolute inset-y-0 left-0 hidden w-[153px] bg-gradient-to-r from-paper to-transparent md:block" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-[153px] bg-gradient-to-l from-paper to-transparent md:block" />
       </div>
     </section>
-  );
-}
-
-function Stat({ value, label }: { value: string; label: string }) {
-  return (
-    <div>
-      <div className="font-display text-xl text-ink font-semibold">{value}</div>
-      <div className="text-xs uppercase tracking-wider text-ink/45 mt-0.5">
-        {label}
-      </div>
-    </div>
-  );
-}
-
-function Divider() {
-  return <div className="hidden sm:block w-px h-8 bg-ink/10" />;
-}
-
-function FloatingTag({
-  text,
-  className = "",
-  dot = false,
-}: {
-  text: string;
-  className?: string;
-  dot?: boolean;
-}) {
-  return (
-    <div
-      className={`hidden md:flex absolute items-center gap-2 px-3 py-2 rounded-full bg-bone border border-ink/8 shadow-sm text-xs text-ink/75 animate-float ${className}`}
-    >
-      {dot && <span className="w-1.5 h-1.5 rounded-full bg-brand-500" />}
-      {text}
-    </div>
   );
 }
