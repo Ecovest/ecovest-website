@@ -1,6 +1,6 @@
 "use client";
 
-import { Mail01Icon, TiktokIcon, WhatsappIcon } from "@hugeicons/core-free-icons";
+import { Mail01Icon, TiktokIcon, WhatsappIcon, NewTwitterIcon} from "@hugeicons/core-free-icons";
 import LogoMark from "@/components/LogoMark";
 import MeadowRiseFooter from "@/components/ui/meadow-rise-footer";
 
@@ -81,6 +81,7 @@ export default function Footer() {
         { icon: TiktokIcon, label: "TikTok", href: "https://www.tiktok.com/@ecovest.africa" },
         { icon: WhatsappIcon, label: "WhatsApp", href: "https://wa.me/2349163655638" },
         { icon: Mail01Icon, label: "Email", href: "mailto:Ecovest00@gmail.com" },
+        { icon: NewTwitterIcon, label: "X", href: "https://x.com/ecovestafrica"}
       ]}
       copyright="© 2026 EcoVest Technologies Ltd. Investing involves risk."
       legal={[
