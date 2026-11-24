@@ -78,7 +78,7 @@ export default function Footer() {
       ]}
       socialTitle="Follow us"
       socials={[
-        { icon: TiktokIcon, label: "TikTok", href: "https://www.tiktok.com/@ecovest.official" },
+        { icon: TiktokIcon, label: "TikTok", href: "https://www.tiktok.com/@ecovest.africa" },
         { icon: WhatsappIcon, label: "WhatsApp", href: "https://wa.me/2349163655638" },
         { icon: Mail01Icon, label: "Email", href: "mailto:Ecovest00@gmail.com" },
       ]}
