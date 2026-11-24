@@ -4,12 +4,12 @@ import { useEffect, useRef, useState } from "react";
 
 /**
  * pocketa screenshots for the three phones: [front, left, right].
- * Files live in /public/pocketa/. Use portrait screenshots (about 9:19.5).
+ * Files live in /public/pocketer/. Use portrait screenshots (about 9:19.5).
  */
 const pocketa_SCREENS: [string, string, string] = [
-  "/pocketa/home.webp",
-  "/pocketa/new-goal.webp",
-  "/pocketa/goal-amount.webp",
+  "/pocketer/home.webp",
+  "/pocketer/new-goal.webp",
+  "/pocketer/goal-amount.webp",
 ];
 
 /**
