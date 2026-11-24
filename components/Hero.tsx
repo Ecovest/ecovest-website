@@ -13,7 +13,7 @@ import PhoneStack from "@/components/PhoneStack";
  *  2. A frosted layer (backdrop blur) with soft vertical bands on top: this turns the
  *     triangles into the streaked glow rising from the bottom.
  *  3. Header, badge, headline, copy and button.
- *  4. Three Pocketer phones fanned along the bottom edge.
+ *  4. Three pocketa phones fanned along the bottom edge.
  */
 
 const GREEN_FROM = "#01ad5f"; // design: #0F7DFA

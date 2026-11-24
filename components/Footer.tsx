@@ -54,7 +54,7 @@ export default function Footer() {
           links: [
             { label: "How it works", href: "/#how-it-works" },
             { label: "Features", href: "/#features" },
-            { label: "Pocketer", href: "/#features" },
+            { label: "pocketa", href: "/#features" },
             { label: "AI Coach", href: "/#features" },
           ],
         },

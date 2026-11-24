@@ -3,13 +3,13 @@
 import { useEffect, useRef, useState } from "react";
 
 /**
- * Pocketer screenshots for the three phones: [front, left, right].
- * Files live in /public/pocketer/. Use portrait screenshots (about 9:19.5).
+ * pocketa screenshots for the three phones: [front, left, right].
+ * Files live in /public/pocketa/. Use portrait screenshots (about 9:19.5).
  */
-const POCKETER_SCREENS: [string, string, string] = [
-  "/pocketer/home.webp",
-  "/pocketer/new-goal.webp",
-  "/pocketer/goal-amount.webp",
+const pocketa_SCREENS: [string, string, string] = [
+  "/pocketa/home.webp",
+  "/pocketa/new-goal.webp",
+  "/pocketa/goal-amount.webp",
 ];
 
 /**
@@ -91,7 +91,7 @@ export default function PhoneStack() {
       <Phone
         className="z-[1]"
         rotate={entered ? -9 : 0}
-        screen={POCKETER_SCREENS[1]}
+        screen={pocketa_SCREENS[1]}
         style={{
           width: "calc(var(--u) * 56)",
           left: "calc(50% - var(--u) * 80)",
@@ -104,7 +104,7 @@ export default function PhoneStack() {
       <Phone
         className="z-[1]"
         rotate={entered ? 9 : 0}
-        screen={POCKETER_SCREENS[2]}
+        screen={pocketa_SCREENS[2]}
         style={{
           width: "calc(var(--u) * 56)",
           left: "calc(50% + var(--u) * 24)",
@@ -114,10 +114,10 @@ export default function PhoneStack() {
           transition: SIDE_IN,
         }}
       />
-      {/* Front: Pocketer home */}
+      {/* Front: pocketa home */}
       <Phone
         className="z-[2]"
-        screen={POCKETER_SCREENS[0]}
+        screen={pocketa_SCREENS[0]}
         style={{
           width: "calc(var(--u) * 66)",
           left: "calc(50% - var(--u) * 33)",

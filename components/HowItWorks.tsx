@@ -15,7 +15,7 @@ const STEPS = [
   { title: "Join free", body: "Sign up and join the EcoVest community. It costs nothing." },
   {
     title: "Learn and plan",
-    body: "Take short lessons, ask the AI coach, and use Pocketer to set a budget and savings goals.",
+    body: "Take short lessons, ask the AI coach, and use pocketa to set a budget and savings goals.",
   },
   {
     title: "Practise, then invest",

@@ -5,7 +5,7 @@ export const metadata: Metadata = { title: "Terms & Conditions · EcoVest" };
 
 export default function Terms() {
   return (
-    <InfoPage tag="Legal" title="Terms &" accent="Conditions" intro="The rules for using EcoVest, Pocketer and the EcoVest community.">
+    <InfoPage tag="Legal" title="Terms &" accent="Conditions" intro="The rules for using EcoVest, pocketa and the EcoVest community.">
       <DraftNote what="Terms & Conditions" />
     </InfoPage>
   );

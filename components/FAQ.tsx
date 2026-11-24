@@ -22,15 +22,15 @@ const QA: { q: string; a: string }[] = [
   },
   {
     q: "Do I need a lot of money to start?",
-    a: "No. Learning costs nothing, Pocketer helps you plan with whatever you earn (even ₦20k a month), and the simulator lets you practise investing without real money.",
+    a: "No. Learning costs nothing, pocketa helps you plan with whatever you earn (even ₦20k a month), and the simulator lets you practise investing without real money.",
   },
   {
     q: "Does EcoVest hold my money?",
     a: "No. EcoVest is where you learn and plan. When you're ready to invest, it will only be through licensed, regulated partners. We never promise returns, and investing always carries risk.",
   },
   {
-    q: "What is Pocketer?",
-    a: "Pocketer is EcoVest's budgeting and savings app. It shows where your money goes each month and helps you set savings goals and reach them.",
+    q: "What is pocketa?",
+    a: "pocketa is EcoVest's budgeting and savings app. It shows where your money goes each month and helps you set savings goals and reach them.",
   },
   {
     q: "Is the AI coach financial advice?",
@@ -38,7 +38,7 @@ const QA: { q: string; a: string }[] = [
   },
   {
     q: "What can I use today?",
-    a: "The EcoVest community is live now. Lessons, the AI coach, Pocketer and the investing simulator are rolling out step by step. Join the community to get them first.",
+    a: "The EcoVest community is live now. Lessons, the AI coach, pocketa and the investing simulator are rolling out step by step. Join the community to get them first.",
   },
 ];
 

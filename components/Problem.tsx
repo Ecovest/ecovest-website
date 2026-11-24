@@ -120,7 +120,7 @@ export default function Problem() {
               tag="Confidence"
               text={
                 <>
-                  Plan with <Soft>Pocketer</Soft>, practise without risk, and invest only through{" "}
+                  Plan with <Soft>pocketa</Soft>, practise without risk, and invest only through{" "}
                   <Soft>licensed partners</Soft> when you&apos;re ready.
                 </>
               }
