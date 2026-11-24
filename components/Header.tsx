@@ -7,7 +7,7 @@ import LogoMark from "@/components/LogoMark";
 import { Icon } from "@/components/ui/Icon";
 
 const links = [
-  { href: "/", label: "Home" },
+  // { href: "/", label: "Home" },
   { href: "/#how-it-works", label: "How it works" },
   { href: "/#features", label: "Features" },
   { href: "/#get-started", label: "Contact" },
